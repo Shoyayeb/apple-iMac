@@ -12,7 +12,7 @@ function totalCalc(option, price) {
     const storageCostParsed = parseFloat(storageCost.innerText);
     const memoryCostParsed = parseFloat(memoryCost.innerText);
     const bestCostParsed = parseFloat(bestCost.innerText);
-    total = bestCostParsed + memoryCostParsed + storageCostParsed + deleveryCostParsed;
+    const total = bestCostParsed + memoryCostParsed + storageCostParsed + deleveryCostParsed;
     totalCost.innerText = total;
     footerTotal.innerText = total;
 }
@@ -43,8 +43,8 @@ document.getElementById("charge-delevery").addEventListener("click", function ()
 // promo-code handling
 document.getElementById("promo-apply").addEventListener("click", function () {
     const totalCostParsed = parseInt(totalCost.innerText);
-    const promoCode = document.getElementById("promo-code").value;
-    if (promoCode == "stevekaku") {
+    const promoCode = document.getElementById("promo-code");
+    if (promoCode.value == "stevekaku") {
         const afterPromoPrice = totalCostParsed - (totalCostParsed * .20);
         footerTotal.innerText = afterPromoPrice;
         document.getElementById("promo-apply").classList.remove("hover:bg-red-600");
@@ -52,5 +52,5 @@ document.getElementById("promo-apply").addEventListener("click", function () {
     } else {
         document.getElementById("promo-error").style.display = "block";
     }
-    document.getElementById("promo-code").value = '';
+    promoCode.value = '';
 });
