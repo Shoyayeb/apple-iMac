@@ -12,11 +12,6 @@ function totalCalc(option, price) {
     const memoryCostParsed = parseFloat(memoryCost.innerText);
     const bestCostParsed = parseFloat(bestCost);
     total = bestCostParsed + memoryCostParsed + storageCostParsed + deleveryCostParsed;
-    console.log(bestCostParsed);
-    console.log(memoryCostParsed);
-    console.log(storageCostParsed);
-    console.log(deleveryCostParsed);
-    console.log(total);
     totalCost.innerText = total;
     footerTotal.innerText = total;
 }
