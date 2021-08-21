@@ -4,8 +4,8 @@ const storageCost = document.getElementById("storage-cost");
 const deleveryCost = document.getElementById("delevery-cost");
 const bestCost = document.getElementById("best-cost").innerText;
 const totalCost = document.getElementById("total-cost");
+const footerTotal = document.getElementById("footer-total");
 function totalCalc(option, price) {
-    const footerTotal = document.getElementById("footer-total");
     option.innerText = price;
     const deleveryCostParsed = parseFloat(deleveryCost.innerText);
     const storageCostParsed = parseFloat(storageCost.innerText);
@@ -38,4 +38,19 @@ document.getElementById("free-delevery").addEventListener("click", function () {
 })
 document.getElementById("charge-delevery").addEventListener("click", function () {
     totalCalc(deleveryCost, 20);
+})
+// promo code handling
+document.getElementById("promo-apply").addEventListener("click", function () {
+    const totalCostParsed = parseInt(totalCost.innerText);
+    const promoCode = document.getElementById("promo-code").value;
+    if (promoCode == "stevekaku") {
+        const afterPromoPrice = totalCostParsed - (totalCostParsed * .20);
+        totalCost.innerText = afterPromoPrice;
+        footerTotal.innerText = afterPromoPrice;
+        document.getElementById("promo-apply").disabled = true;
+        document.getElementById("promo-apply").classList.remove("hover:bg-red-600")
+        document.getElementById("promo-error").style.display = "none";
+    } else {
+        document.getElementById("promo-error").style.display = "block";
+    }
 })
