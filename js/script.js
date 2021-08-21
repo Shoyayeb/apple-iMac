@@ -5,17 +5,24 @@ const deleveryCost = document.getElementById("delevery-cost");
 const bestCost = document.getElementById("best-cost");
 const totalCost = document.getElementById("total-cost");
 const footerTotal = document.getElementById("footer-total");
-// function to calculate and set price on website
+// function to calculate total price
+
+function getTotal() {
+    const total = parseFloat(deleveryCost.innerText) + parseFloat(storageCost.innerText) + parseFloat(memoryCost.innerText) + parseFloat(bestCost.innerText);
+    return total;
+}
+// function to set price on website
+
 function totalCalc(option, price) {
     option.innerText = price;
-    const deleveryCostParsed = parseFloat(deleveryCost.innerText);
-    const storageCostParsed = parseFloat(storageCost.innerText);
-    const memoryCostParsed = parseFloat(memoryCost.innerText);
-    const bestCostParsed = parseFloat(bestCost.innerText);
-    const total = bestCostParsed + memoryCostParsed + storageCostParsed + deleveryCostParsed;
+    const total = getTotal()
     totalCost.innerText = total;
     footerTotal.innerText = total;
 }
+
+
+
+
 // memory price calculation
 document.getElementById("8-memory").addEventListener("click", function () {
     totalCalc(memoryCost, 0);
@@ -40,6 +47,12 @@ document.getElementById("free-delevery").addEventListener("click", function () {
 document.getElementById("charge-delevery").addEventListener("click", function () {
     totalCalc(deleveryCost, 20);
 });
+
+
+
+
+
+
 // promo-code handling
 document.getElementById("promo-apply").addEventListener("click", function () {
     const totalCostParsed = parseInt(totalCost.innerText);
