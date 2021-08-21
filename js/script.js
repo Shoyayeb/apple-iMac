@@ -6,60 +6,23 @@ const bestCost = document.getElementById("best-cost");
 const totalCost = document.getElementById("total-cost");
 const footerTotal = document.getElementById("footer-total");
 // function to calculate total price
-
 function getTotal() {
     const total = parseFloat(deleveryCost.innerText) + parseFloat(storageCost.innerText) + parseFloat(memoryCost.innerText) + parseFloat(bestCost.innerText);
     return total;
 }
 // function to set price on website
-
 function totalCalc(option, price) {
     option.innerText = price;
     const total = getTotal()
     totalCost.innerText = total;
     footerTotal.innerText = total;
 }
-
-
-
-
-// memory price calculation
-document.getElementById("8-memory").addEventListener("click", function () {
-    totalCalc(memoryCost, 0);
-});
-document.getElementById("16-memory").addEventListener("click", function () {
-    totalCalc(memoryCost, 180);
-});
-// storage price calculation
-document.getElementById("256-ssd").addEventListener("click", function () {
-    totalCalc(storageCost, 0);
-});
-document.getElementById("512-ssd").addEventListener("click", function () {
-    totalCalc(storageCost, 100);
-});
-document.getElementById("1tb-ssd").addEventListener("click", function () {
-    totalCalc(storageCost, 180);
-});
-// delevery price calculation
-document.getElementById("free-delevery").addEventListener("click", function () {
-    totalCalc(deleveryCost, 0);
-});
-document.getElementById("charge-delevery").addEventListener("click", function () {
-    totalCalc(deleveryCost, 20);
-});
-
-
-
-
-
-
 // promo-code handling
 document.getElementById("promo-apply").addEventListener("click", function () {
-    const totalCostParsed = parseInt(totalCost.innerText);
     const promoCode = document.getElementById("promo-code");
     if (promoCode.value == "stevekaku") {
-        const afterPromoPrice = totalCostParsed - (totalCostParsed * .20);
-        footerTotal.innerText = afterPromoPrice;
+        const promoUsedPrice = parseInt(totalCost.innerText) - (parseInt(totalCost.innerText) * .20);
+        footerTotal.innerText = promoUsedPrice;
         document.getElementById("promo-apply").classList.remove("hover:bg-red-600");
         document.getElementById("promo-error").style.display = "none";
     } else {

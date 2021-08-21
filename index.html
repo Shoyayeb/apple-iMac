@@ -55,32 +55,33 @@
                         <div class="my-12">
                             <p class="font-bold text-lg mb-3">Memory</p>
                             <button id="8-memory"
-                                class="mx-2 focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">8GB
+                                class="mx-2 focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg"
+                                onclick="totalCalc(memoryCost, 0)">8GB
                                 unified memory</button id="">
-                            <button id="16-memory"
+                            <button onclick="totalCalc(memoryCost, 180)" id="16-memory"
                                 class="mx-2 focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">16GB
                                 unified memory</button id="">
                         </div>
                         <!-- storage config -->
                         <div class="my-12">
                             <p class="font-bold text-lg mb-3">Storage</p>
-                            <button id="256-ssd"
+                            <button onclick="totalCalc(storageCost, 0)" id="256-ssd"
                                 class=" mx-2 focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">256GB
                                 SSD storage</button id="">
-                            <button id="512-ssd"
+                            <button onclick="totalCalc(storageCost, 100)" id="512-ssd"
                                 class=" mx-2 focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">512GB
                                 SSD storage</button id="">
-                            <button id="1tb-ssd"
+                            <button onclick="totalCalc(storageCost, 180)" id="1tb-ssd"
                                 class=" mx-2 focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">1TB
                                 SSD storage</button id="">
                         </div>
                         <!-- delivery selection -->
                         <div class="my-12">
                             <p class="font-bold text-lg mb-3">Choose your delivery option</p>
-                            <button id="free-delevery"
+                            <button onclick="totalCalc(deleveryCost, 0);" id="free-delevery"
                                 class="mx-0 my-1 focus:bg-gray-100 md:mb-0 mb-4 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">Friday,
                                 Aug 25 FREE Prime Delivery</button id="">
-                            <button id="charge-delevery"
+                            <button onclick="totalCalc(deleveryCost, 20);" id="charge-delevery"
                                 class="mx-0 my-1 focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">Monday,
                                 Aug 21 Delivery charge $20</button id="">
                         </div>
