@@ -16,17 +16,26 @@
 </head>
 
 <body>
+    <!-- 
+        main contents starts here
+     -->
     <main>
         <section class="my-12">
             <div class="md:flex md:px-10 px-7 lg:px-18 xl:px-32">
-                <!-- intro image -->
-                <div class="hidden md:w-6/12">
+                <!-- 
+                    intro 
+                 -->
+                <div class="md:w-6/12">
                     <img src="./images/mac.png" alt="">
                 </div>
-                <!-- intro text and customization and buy section -->
+                <!-- 
+                    intro text and customization and buy section
+                 -->
                 <div class=" md:ml-16 md:w-6/12">
-                    <!-- intro text section -->
-                    <div class="hidden">
+                    <!--
+                         intro text section 
+                        -->
+                    <div class="">
                         <h1 class="lg:text-5xl md:text-4xl text-3xl font-semibold leading-relaxed mb-4 tracking-wide">
                             Customize your Blue 24-inch iMac with
                             Apple M1 chip.</h1>
@@ -38,8 +47,11 @@
                             4
                             ports Magic Mouse Magic Keyboard - US English</p>
                     </div>
-                    <!-- customization section -->
+                    <!-- 
+                        Configuration section
+                     -->
                     <div class="">
+                        <!-- memory config -->
                         <div class="my-12">
                             <p class="font-bold text-lg mb-3">Memory</p>
                             <button id="8-memory"
@@ -49,6 +61,7 @@
                                 class="focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">16GB
                                 unified memory</button id="">
                         </div>
+                        <!-- storage config -->
                         <div class="my-12">
                             <p class="font-bold text-lg mb-3">Storage</p>
                             <button id="256-ssd"
@@ -61,6 +74,7 @@
                                 class="focus:bg-gray-100 hover:bg-gray-100 border-2 border-gray-400 focus:border-blue-300 p-2 rounded-lg">1TB
                                 SSD storage</button id="">
                         </div>
+                        <!-- delivery selection -->
                         <div class="my-12">
                             <p class="font-bold text-lg mb-3">Choose your delivery option</p>
                             <button id="free-delevery"
@@ -71,7 +85,9 @@
                                 Aug 21 Delivery charge $20</button id="">
                         </div>
                     </div>
-                    <!-- buy section -->
+                    <!-- 
+                        buy section
+                     -->
                     <div>
                         <table class="md:w-4/5 lg:w-3/5 w-4/5">
                             <tbody class="font-bold text-xl leading-loose">
@@ -97,7 +113,9 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <!-- promo code section -->
+                        <!-- 
+                            promo code section
+                         -->
                         <div>
                             <h4 class="text-lg my-4 font-medium">Add Promo Code</h4>
                             <input type="text" name="promoCode" id="promo-code" required
@@ -105,13 +123,17 @@
                             <button id="promo-apply"
                                 class=" py-2 px-5 hover:bg-red-600  focus:bg-red-600 rounded text-white bg-red-500">Apply</button
                                 id="">
-                            <h4 id="promo-error" class="hidden text-red-500 text-lg my-4 font-small">Promo Code not found !</h4>
+                            <h4 id="promo-error" class="hidden text-red-500 text-lg my-4 font-small">Promo Code not
+                                found !</h4>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <!-- 
+        footer starts here
+     -->
     <footer>
         <hr class="w-5/6 m-auto">
         <h1 class="text-center text-5xl">Total: $<span id="footer-total">1299</span></h1>
